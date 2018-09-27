@@ -37,5 +37,9 @@ public class ImplementConsumer {
         };
         Stream.of("this", "is", "a", "list")
               .forEach(consumer);
+
+        // Simpler
+        consumer = s -> System.out.println(s);
+        consumer = System.out::println;
     }
 }
