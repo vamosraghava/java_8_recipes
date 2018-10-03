@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class UsePerson {
     private static List<String> names =
             Arrays.asList("Grace Hopper", "Frances Allen", "Ada Lovelace",
-                    "Barbara Liskov", "Adele Goldberg", "Karen Spärck Jones");
+                          "Barbara Liskov", "Adele Goldberg", "Karen Spärck Jones");
 
     public List<String> getNames() {
         return names;
@@ -26,42 +26,43 @@ public class UsePerson {
 
     public List<Person> createPersonList() {
         return names.stream()                     // Stream<String>
-                .map(name -> new Person(name))    // Stream<Person>
-                .collect(Collectors.toList());    // List<Person>
+                    .map(name -> new Person(name))    // Stream<Person>
+                    .collect(Collectors.toList());    // List<Person>
     }
 
     public List<Person> createPersonList_CtorRef() {
         return names.stream()
-                .map(Person::new)  // invoke the one-arg Person ctor that takes String
-                .collect(Collectors.toList());
+                    .map(Person::new)  // invoke the one-arg Person ctor that takes String
+                    .collect(Collectors.toList());
     }
 
     public List<Person> createPersonList_2ArgCtrRef() {
         return names.stream()                  // Stream<String>
-                .map(name -> name.split(" "))  // Stream<String[]>
-                .map(Person::new)              // Stream<Person> using String... ctor
-                .map(Person::new)              // Stream<Person> copies using the copy ctor
-                .collect(Collectors.toList());
+                    .map(name -> name.split(" "))  // Stream<String[]>
+                    .map(Person::new)              // Stream<Person> using String... ctor
+                    .map(Person::new)              // Stream<Person> copies using the copy ctor
+                    .collect(Collectors.toList());
     }
 
     public List<Person> createPersonLinkedList() {
         return names.stream()
-                .map(Person::new)
-                .collect(Collectors.toCollection(LinkedList::new));
+                    .map(Person::new)
+                    .collect(Collectors.toCollection(LinkedList::new));
     }
 
     public Person[] createPersonArray() {
         return names.stream()
-                .map(Person::new)
-                .toArray(Person[]::new);
+                    .map(Person::new)
+                    .toArray(Person[]::new);
     }
 
     public List<Person> createPersonListUsingNew() {
         return names.stream()
-                .map(Person::new)
-                .collect(LinkedList::new,
-                         LinkedList::add,
-                         LinkedList::addAll);
+                    // .parallel()
+                    .map(Person::new)
+                    .collect(LinkedList::new,
+                             LinkedList::add,
+                             LinkedList::addAll);
     }
 
     public List<Person> createPersonListUsingNewWithLambdas() {
