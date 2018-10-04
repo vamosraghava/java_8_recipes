@@ -23,6 +23,10 @@ public class PeekDemo {
 
     public int sumDoublesDivisibleBy3(int start, int end) {
         return IntStream.rangeClosed(start, end)
+//                        .map(n -> {
+//                            System.out.println("n = " + n);
+//                            return n;
+//                        })
                         .peek(n -> System.out.printf("original: %d%n", n))
                         .map(n -> n * 2)
                         .peek(n -> System.out.printf("doubled : %d%n", n))
