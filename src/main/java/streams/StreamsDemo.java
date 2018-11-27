@@ -14,8 +14,7 @@ public class StreamsDemo {
                                                  "list", "of", "strings");
 
     public String joinStream() {
-        return strings.stream()
-                      .collect(Collectors.joining(" "));
+        return String.join(" ", strings);
     }
 
     public String joinUpperCase() {

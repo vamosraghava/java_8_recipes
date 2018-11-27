@@ -25,7 +25,7 @@ public class UsePerson {
     }
 
     public List<Person> createPersonList() {
-        return names.stream()                     // Stream<String>
+        return names.stream()                         // Stream<String>
                     .map(name -> new Person(name))    // Stream<Person>
                     .collect(Collectors.toList());    // List<Person>
     }
@@ -56,6 +56,12 @@ public class UsePerson {
                     .toArray(Person[]::new);
     }
 
+
+    // 1..5 | 6..10 | 11..15 | 16..20
+    // add each element to LinkedList and return it (sequential)
+    // Say we are using a parallel stream with four processes
+    //  R1      R2      R3       R4
+    //               R
     public List<Person> createPersonListUsingNew() {
         return names.stream()
                     // .parallel()
