@@ -1,11 +1,16 @@
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PalindromeCheckerTest {
     private List<String> palindromes = Arrays.asList(
             "Madam, in Eden, I'm Adam",
@@ -37,5 +42,16 @@ public class PalindromeCheckerTest {
 
         assertFalse(
                 PalindromeChecker.checkPalindrome("This is NOT a palindrome"));
+    }
+
+    List<String> palindromeProvider() {
+        return palindromes;
+    }
+
+    @DisplayName("JUnit 5 parameterized test for palindromes")
+    @ParameterizedTest(name = "{0} is a palindrome")
+    @MethodSource("palindromeProvider")
+    void palindromes(String candidate) {
+        assertTrue(PalindromeChecker.checkPalindrome(candidate));
     }
 }
