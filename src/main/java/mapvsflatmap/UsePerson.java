@@ -37,7 +37,7 @@ public class UsePerson {
     }
 
     public List<Person> createPersonList_2ArgCtrRef() {
-        return names.stream()                  // Stream<String>
+        return names.stream()                      // Stream<String>
                     .map(name -> name.split(" "))  // Stream<String[]>
                     .map(Person::new)              // Stream<Person> using String... ctor
                     .map(Person::new)              // Stream<Person> copies using the copy ctor
@@ -76,8 +76,8 @@ public class UsePerson {
                     .map(Person::new)
                     .collect(() -> new LinkedList<Person>(),
                              (people, e) -> people.add(e),
-                             (totalPeopleCollection, people) ->
-                                     totalPeopleCollection.addAll(people)); // not called unless parallel
+                             (totalCollection, people) ->
+                                     totalCollection.addAll(people)); // not called unless parallel
     }
 
 }
