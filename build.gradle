@@ -22,14 +22,12 @@ test {
     maxParallelForks = Runtime.runtime.availableProcessors() / 2
 }
 
-def JUNIT5_VERSION = '5.3.2'
+def JUNIT5_VERSION = '5.4.0'
 
 dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.1'
 
-    testImplementation "org.junit.jupiter:junit-jupiter-api:$JUNIT5_VERSION"
-    testImplementation "org.junit.jupiter:junit-jupiter-params:$JUNIT5_VERSION"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$JUNIT5_VERSION"
+    testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT5_VERSION"
 
     testCompileOnly 'junit:junit:4.12'
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$JUNIT5_VERSION"
