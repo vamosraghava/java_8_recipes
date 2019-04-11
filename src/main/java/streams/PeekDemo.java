@@ -13,10 +13,8 @@ public class PeekDemo {
 
     public int sumEachDoubleUpTo(int num) {
         return IntStream.rangeClosed(1, num)
-//                        .map(n -> {
-//                            System.out.println("The value of n before doubling is " + n);
-//                            return n;
-//                        })
+                        .peek(n -> System.out.println(
+                                "The value of n before doubling is " + n))
                         .map(n -> n * 2)
                         .sum();
     }

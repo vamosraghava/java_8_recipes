@@ -23,7 +23,7 @@ public class AddCollectionToMap {
         );
 
         Map<Integer, Book> bookMap = books.stream()
-                .collect(Collectors.toMap(Book::getId, b -> b));
+                .collect(Collectors.toMap(Book::getId, book -> book));
 
         bookMap.forEach((k,v) ->
                 System.out.println(k + ": " + v)

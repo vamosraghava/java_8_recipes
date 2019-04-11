@@ -20,7 +20,7 @@ public class WordMap {
             return lines.flatMap(line -> line.length() == 0 ? Stream.empty() :
                             Stream.of(line.split(" ")))
                     .map(String::toLowerCase)
-                    .collect(groupingBy(Function.identity(), counting()));
+                    .collect(groupingBy(word -> word, counting()));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
