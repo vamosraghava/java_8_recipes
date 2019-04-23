@@ -1,5 +1,6 @@
 package mapvsflatmap;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -22,6 +23,10 @@ public class UsePerson {
             people.add(new Person(name));
         }
         return people;
+    }
+
+    private Person createPerson(String name) {
+        return new Person(name);
     }
 
     public List<Person> createPersonList() {
@@ -47,6 +52,7 @@ public class UsePerson {
     public List<Person> createPersonLinkedList() {
         return names.stream()
                     .map(Person::new)
+                    //.collect(Collectors.toCollection(() -> new LinkedList<>()));
                     .collect(Collectors.toCollection(LinkedList::new));
     }
 
