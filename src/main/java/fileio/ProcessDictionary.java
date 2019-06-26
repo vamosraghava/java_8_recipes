@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.*;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
@@ -36,7 +37,7 @@ public class ProcessDictionary {
         System.out.println("\nList of words of each length:");
         try (Stream<String> lines = Files.lines(dictionary)) {
             lines.filter(s -> s.length() > 20)
-                    .collect(Collectors.groupingBy(String::length)) // Map<Integer,List<String>>
+                    .collect(groupingBy(String::length)) // Map<Integer,List<String>>
                     .forEach((len, wordList) -> System.out.println(len + ": " + wordList));
         } catch (IOException e) {
             e.printStackTrace();
@@ -47,7 +48,7 @@ public class ProcessDictionary {
         System.out.println("\nNumber of words of each length:");
         try (Stream<String> lines = Files.lines(dictionary)) {
             lines.filter(s -> s.length() > 20)
-                    .collect(Collectors.groupingBy(String::length, Collectors.counting())) // Map<Integer,Long>
+                    .collect(groupingBy(String::length, counting())) // Map<Integer,Long>
                     .forEach((len, num) -> System.out.printf("%d: %d%n", len, num));
         } catch (IOException e) {
             e.printStackTrace();

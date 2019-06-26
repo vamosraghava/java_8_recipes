@@ -40,7 +40,7 @@ public class ParallelStreamBenchmark {
         return result;
     }
 
-    @Benchmark
+    @Benchmark  // Slowest possible stream
     public long sequentialStreamSum() {
         return Stream.iterate(1L, i -> i + 1)
                 .limit(N)
@@ -55,7 +55,7 @@ public class ParallelStreamBenchmark {
                 .reduce(0L, Long::sum);
     }
 
-    @Benchmark
+    @Benchmark // Fastest possible stream
     public long sequentialLongStreamSum() {
         return LongStream.rangeClosed(1, N)
                 .sum();
