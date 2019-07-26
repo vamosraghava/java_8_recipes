@@ -38,7 +38,7 @@ public class ClosureVariables {
 
         // Functional, no shared mutable state
         total = nums.stream()
-                .mapToInt(Integer::valueOf)
+                .mapToInt(Integer::intValue)
                 .sum();
         System.out.printf("The total is %d%n", total);
 
