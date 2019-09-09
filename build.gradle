@@ -22,7 +22,7 @@ test {
     maxParallelForks = Runtime.runtime.availableProcessors() / 2
 }
 
-def JUNIT5_VERSION = '5.5.1'
+def JUNIT5_VERSION = '5.5.2'
 
 dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.1'
