@@ -25,7 +25,7 @@ test {
 def JUNIT5_VERSION = '5.5.2'
 
 dependencies {
-    testImplementation 'org.hamcrest:hamcrest:2.1'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
 
     testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT5_VERSION"
 
