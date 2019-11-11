@@ -4,9 +4,16 @@ public class CompanyEmployee implements Company, Employee {
     private String first;
     private String last;
 
+    public CompanyEmployee() {}
+
+    public CompanyEmployee(String first, String last) {
+        this.first = first;
+        this.last = last;
+    }
+
     @Override
     public String getName() {
-        return String.format("%s working for %s",
+        return String.format("%s works for %s",
                 Employee.super.getName(), Company.super.getName());
     }
 
@@ -24,4 +31,5 @@ public class CompanyEmployee implements Company, Employee {
     public String getLast() {
         return last;
     }
+
 }
