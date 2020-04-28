@@ -1,6 +1,5 @@
 package mapvsflatmap;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -9,7 +8,7 @@ import java.util.stream.Collectors;
 
 @SuppressWarnings("Convert2MethodRef")
 public class UsePerson {
-    private static List<String> names =
+    private static final List<String> names =
             Arrays.asList("Grace Hopper", "Frances Allen", "Ada Lovelace",
                           "Barbara Liskov", "Adele Goldberg", "Karen Spärck Jones");
 
