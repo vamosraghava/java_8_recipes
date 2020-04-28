@@ -77,11 +77,12 @@ public class UsePerson {
                              LinkedList::addAll);
     }
 
+    @SuppressWarnings("Convert2Diamond")
     public List<Person> createPersonListUsingNewWithLambdas() {
         return names.stream()
                     .map(Person::new)
                     .collect(() -> new LinkedList<Person>(),
-                             (people, e) -> people.add(e),
+                             (people, person) -> people.add(person),
                              (totalCollection, people) ->
                                      totalCollection.addAll(people)); // not called unless parallel
     }
