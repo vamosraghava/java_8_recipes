@@ -55,6 +55,6 @@ public class SortGolfers {
 //        sg.defaultSort();
 //        sg.sortByScoreThenLast();
         sg.sortByScoreThenLastThenFirst();
-        // sg.partitionByScore();
+//         sg.partitionByScore();
     }
 }
