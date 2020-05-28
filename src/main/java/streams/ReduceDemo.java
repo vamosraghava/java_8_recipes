@@ -91,7 +91,8 @@ public class ReduceDemo {
         List<Book> books = Arrays.asList(
                 new Book(3, "Modern Java Recipes"),
                 new Book(2, "Making Java Groovy"),
-                new Book(1, "Gradle Recipes for Android"));
+                new Book(1, "Gradle Recipes for Android"),
+                new Book(4, "Kotlin Cookbook"));
 
         // Note: this is the HARD way; see AddCollectionToMap for easier ways
         SortedMap<Integer, Book> bookMap = books.stream()

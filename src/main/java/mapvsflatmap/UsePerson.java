@@ -64,16 +64,16 @@ public class UsePerson {
 
     // 1..5 | 6..10 | 11..15 | 16..20
     // add each element to LinkedList and return it (sequential)
-    // Say we are using a parallel stream with four processes
-    //  R1      R2      R3       R4
+    // Say we are using a parallel stream with four processors
+    //  R1     R2       R3       R4
     //               R
     public List<Person> createPersonListUsingNew() {
         return names.stream()
                     // .parallel()
                     .map(Person::new)
-                    .collect(LinkedList::new,
-                             LinkedList::add,
-                             LinkedList::addAll);
+                    .collect(LinkedList::new,     // Supplier<LinkedList>
+                             LinkedList::add,     // BiConsumer<LinkedList,Person>
+                             LinkedList::addAll); // BiConsumer<LinkedList,LinkedList>
     }
 
     @SuppressWarnings("Convert2Diamond")
