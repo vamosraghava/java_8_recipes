@@ -64,6 +64,8 @@ public class ReduceDemo {
                 .reduce(Integer.MIN_VALUE, Integer::max);
         System.out.println("The max value is " + max);
 
+        Integer maxValue = IntStream.of(3, 1, 4, 1, 5, 9).max().orElse(0);
+
 
         /* String example */
         // Inefficient, but works

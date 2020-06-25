@@ -25,8 +25,7 @@ public class ProcessDictionary {
                             //.thenComparing(Comparator.reverseOrder()))
                     )
                     .limit(10)
-                    .forEach(w ->
-                            System.out.printf("%s (%d)%n", w, w.length()));
+                    .forEach(w -> System.out.printf("%s (%d)%n", w, w.length()));
         } catch (IOException e) {
             e.printStackTrace();
         }
