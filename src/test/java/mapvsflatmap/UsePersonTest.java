@@ -2,6 +2,7 @@ package mapvsflatmap;
 
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -93,7 +94,7 @@ public class UsePersonTest {
         assertThat(up.createPersonListUsingNew(), containsInAnyOrder(people));
     }
 
-    @Test
+    @Test @Disabled("Only use if wrap the connection in unmodifiable collection")
     public void createPersonListUsingNewWithLambdas() {
         assertThrows(UnsupportedOperationException.class,
                 up::createPersonListUsingNewWithLambdas);
