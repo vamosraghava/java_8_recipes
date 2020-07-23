@@ -15,7 +15,7 @@ import static java.util.stream.Collectors.groupingBy;
 
 @SuppressWarnings("GrazieInspection")
 public class ProcessDictionary {
-    private Path dictionary = Paths.get("src/main/resources/dict/words");
+    private final Path dictionary = Paths.get("src/main/resources/dict/words");
 
     public void printTenLongestWords() {
         System.out.println("\nTen Longest Words:");

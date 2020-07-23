@@ -1,21 +1,23 @@
 package mapvsflatmap;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UsePersonTest {
-    private UsePerson up = new UsePerson();
+    private final UsePerson up = new UsePerson();
     private Person[] people;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         people = up.getNames().stream()
                 .map(Person::new)
@@ -91,4 +93,9 @@ public class UsePersonTest {
         assertThat(up.createPersonListUsingNew(), containsInAnyOrder(people));
     }
 
+    @Test
+    public void createPersonListUsingNewWithLambdas() {
+        assertThrows(UnsupportedOperationException.class,
+                up::createPersonListUsingNewWithLambdas);
+    }
 }
