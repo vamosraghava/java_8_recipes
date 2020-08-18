@@ -19,8 +19,8 @@ public class ProcessDictionary {
 
     public void printTenLongestWords() {
         System.out.println("\nTen Longest Words:");
-        try (Stream<String> lines = Files.lines(dictionary)) {
-            lines.filter(s -> s.length() > 20)
+        try (Stream<String> words = Files.lines(dictionary)) {
+            words.filter(s -> s.length() > 20)
                     .sorted(Comparator.comparingInt(String::length).reversed()
                             //.thenComparing(Comparator.reverseOrder()))
                     )
@@ -33,8 +33,8 @@ public class ProcessDictionary {
 
     public void printWordsOfEachLength() {
         System.out.println("\nList of words of each length:");
-        try (Stream<String> lines = Files.lines(dictionary)) {
-            lines.filter(s -> s.length() > 20)
+        try (Stream<String> words = Files.lines(dictionary)) {
+            words.filter(s -> s.length() > 20)
                     .collect(groupingBy(String::length)) // Map<Integer,List<String>>
                     .forEach((len, wordList) -> System.out.println(len + ": " + wordList));
         } catch (IOException e) {
@@ -44,8 +44,8 @@ public class ProcessDictionary {
 
     public void printHowManyWordsOfEachLength() {
         System.out.println("\nNumber of words of each length:");
-        try (Stream<String> lines = Files.lines(dictionary)) {
-            lines.filter(s -> s.length() > 20)
+        try (Stream<String> words = Files.lines(dictionary)) {
+            words.filter(s -> s.length() > 20)
                     .collect(groupingBy(String::length, counting())) // Map<Integer,Long>
                     .forEach((len, num) -> System.out.printf("%d: %d%n", len, num));
         } catch (IOException e) {
@@ -55,8 +55,8 @@ public class ProcessDictionary {
 
     public void printSortedMapOfWords() {
         System.out.println("\nNumber of words of each length (desc order):");
-        try (Stream<String> lines = Files.lines(dictionary)) {
-            Map<Integer, Long> map = lines.filter(s -> s.length() > 20)
+        try (Stream<String> words = Files.lines(dictionary)) {
+            Map<Integer, Long> map = words.filter(s -> s.length() > 20)
                     .collect(groupingBy(String::length, counting()));
 
             map.entrySet().stream()
@@ -69,9 +69,9 @@ public class ProcessDictionary {
 
     public void printSortedMapOfWordsUsingBufferedReader() {
         System.out.println("\nNumber of words of each length (desc order):");
-        try (Stream<String> lines =
+        try (Stream<String> words =
                      new BufferedReader(new FileReader("/usr/share/dict/words")).lines()) {
-            Map<Integer, Long> map = lines.filter(s -> s.length() > 20)
+            Map<Integer, Long> map = words.filter(s -> s.length() > 20)
                     .collect(groupingBy(String::length, counting()));
 
             map.entrySet().stream()

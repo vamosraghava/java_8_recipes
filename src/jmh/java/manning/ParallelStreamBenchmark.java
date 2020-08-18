@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-// From Java 8 and 9 in Action
+// From Java 8 and 9 in Action (now called Modern Java in Action)
 
 // Recent results:
 //  Benchmark                                        Mode  Cnt   Score   Error  Units
@@ -42,7 +42,7 @@ public class ParallelStreamBenchmark {
 
     @Benchmark  // Slowest possible stream
     public long sequentialStreamSum() {
-        return Stream.iterate(1L, i -> i + 1)
+        return Stream.iterate(1L, i -> i + 1)  // Stream<Long>
                 .limit(N)
                 .reduce(0L, Long::sum);
     }

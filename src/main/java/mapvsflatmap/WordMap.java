@@ -12,7 +12,7 @@ import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
 public class WordMap {
-    private Path resourceDir = Paths.get("src/main/resources");
+    private final Path resourceDir = Paths.get("src/main/resources");
     private String fileName = "simple_file.txt";
 
     public Map<String, Long> createMap() {
