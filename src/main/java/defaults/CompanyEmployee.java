@@ -11,7 +11,7 @@ public class CompanyEmployee implements Company, Employee {
         this.last = last;
     }
 
-    @Override
+    //    @Override
     public String getName() {
         return String.format("%s works for %s",
                 Employee.super.getName(), Company.super.getName());
