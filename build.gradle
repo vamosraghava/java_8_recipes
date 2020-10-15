@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'eclipse'
-    id "me.champeau.gradle.jmh" version "0.5.0"
+    id "me.champeau.gradle.jmh" version "0.5.2"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -21,17 +21,17 @@ test {
     maxParallelForks = Runtime.runtime.availableProcessors() / 2
 }
 
-def JUNIT5_VERSION = '5.6.2'
+def JUNIT5_VERSION = '5.7.0'
 
 dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT5_VERSION"
 
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.1'
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$JUNIT5_VERSION"
 
-    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.25'
-    jmh 'org.openjdk.jmh:jmh-core:1.25'
+    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.26'
+    jmh 'org.openjdk.jmh:jmh-core:1.26'
 }
 
 
