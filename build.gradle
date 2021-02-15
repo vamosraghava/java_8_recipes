@@ -27,7 +27,7 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation "org.junit.jupiter:junit-jupiter:$JUNIT5_VERSION"
 
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$JUNIT5_VERSION"
 
     jmh 'org.openjdk.jmh:jmh-core:1.27'
