@@ -1,14 +1,15 @@
 package streams;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.number.IsCloseTo.closeTo;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StreamsDemoTest {
-    private StreamsDemo demo = new StreamsDemo();
+    private final StreamsDemo demo = new StreamsDemo();
 
     @Test
     public void testJoinStream() {
