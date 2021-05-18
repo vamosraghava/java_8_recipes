@@ -7,7 +7,7 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 jmh {
@@ -18,10 +18,10 @@ jmh {
 
 test {
     useJUnitPlatform()
-    maxParallelForks = Runtime.runtime.availableProcessors() / 2
+    maxParallelForks = (int) (Runtime.runtime.availableProcessors() / 2)
 }
 
-def JUNIT5_VERSION = '5.7.1'
+def JUNIT5_VERSION = '5.7.2'
 
 dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.2'
