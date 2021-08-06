@@ -38,10 +38,10 @@ public class UsePerson {
     }
 
     public List<Person> createPersonList_2ArgCtrRef() {
-        return names.stream()                      // Stream<String>
-                    .map(name -> name.split(" "))  // Stream<String[]>
-                    .map(Person::new)              // Stream<Person> using String... ctor
-                    .map(Person::new)              // Stream<Person> copies using the copy ctor
+        return names.stream()                         // Stream<String>
+                    .map(name -> name.split("\\s+"))  // Stream<String[]>
+                    .map(Person::new)                 // Stream<Person> using String... ctor
+                    .map(Person::new)                 // Stream<Person> copies using the copy ctor
                     .collect(Collectors.toList());
     }
 
@@ -49,6 +49,7 @@ public class UsePerson {
         return names.stream()
                     .map(Person::new)
                     //.collect(Collectors.toCollection(() -> new LinkedList<>()));
+                    //.collect(Collectors.toCollection(() -> new ArrayList<>(10)));
                     .collect(Collectors.toCollection(LinkedList::new));
     }
 
@@ -66,7 +67,7 @@ public class UsePerson {
     //               R
     public List<Person> createPersonListUsingNew() {
         return names.stream()
-                    // .parallel()
+                    .parallel()
                     .map(Person::new)
                     .collect(LinkedList::new,     // Supplier<LinkedList>
                              LinkedList::add,     // BiConsumer<LinkedList,Person>
@@ -76,7 +77,7 @@ public class UsePerson {
     @SuppressWarnings("Convert2Diamond")
     public List<Person> createPersonListUsingNewWithLambdas() {
         return names.stream()
-                    .map(Person::new)
+                    .map(name -> new Person(name))
                     .collect(() -> new LinkedList<Person>(),
                              (people, person) -> people.add(person),
                              (totalCollection, people) ->

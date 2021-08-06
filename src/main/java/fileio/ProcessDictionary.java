@@ -17,6 +17,15 @@ import static java.util.stream.Collectors.groupingBy;
 public class ProcessDictionary {
     private final Path dictionary = Paths.get("src/main/resources/dict/words");
 
+    public int maxLength() {
+        try (Stream<String> words = Files.lines(dictionary)) {
+            return words.max(Comparator.comparing(String::length)).orElse("").length();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     public void printTenLongestWords() {
         System.out.println("\nTen Longest Words:");
         try (Stream<String> words = Files.lines(dictionary)) {

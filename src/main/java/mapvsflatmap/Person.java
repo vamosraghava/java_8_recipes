@@ -14,7 +14,7 @@ public class Person {
         this.name = name;
     }
 
-    public Person(String... names) {
+    public Person(String... names) {  // String... internally is viewed an a String[]
         System.out.println("Varargs ctor, names=" + Arrays.asList(names));
         name = String.join(" ", names); // concats all strings together
     }
