@@ -67,7 +67,7 @@ public class UsePerson {
     //               R
     public List<Person> createPersonListUsingNew() {
         return names.stream()
-                    .parallel()
+                    // .parallel()
                     .map(Person::new)
                     .collect(LinkedList::new,     // Supplier<LinkedList>
                              LinkedList::add,     // BiConsumer<LinkedList,Person>
