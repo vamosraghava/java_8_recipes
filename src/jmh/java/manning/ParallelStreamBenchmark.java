@@ -8,20 +8,13 @@ import java.util.stream.Stream;
 
 // From Java 8 and 9 in Action (now called Modern Java in Action)
 
-// Recent results:
-//  Benchmark                                        Mode  Cnt   Score   Error  Units
-//  ParallelStreamBenchmark.iterativeSum             avgt   40   6.441 ± 0.019  ms/op
-//  ParallelStreamBenchmark.sequentialStreamSum      avgt   40  90.468 ± 0.613  ms/op
-//  ParallelStreamBenchmark.parallelStreamSum        avgt   40  99.148 ± 3.065  ms/op
-//  ParallelStreamBenchmark.sequentialLongStreamSum  avgt   40   6.191 ± 0.248  ms/op
-//  ParallelStreamBenchmark.parallelLongStreamSum    avgt   40   6.571 ± 2.756  ms/op
-
-//Benchmark                                        Mode  Cnt    Score   Error  Units
-//        ParallelStreamBenchmark.iterativeSum             avgt   40    6.240 ± 0.210  ms/op
-//        ParallelStreamBenchmark.parallelLongStreamSum    avgt   40    6.688 ± 2.355  ms/op
-//        ParallelStreamBenchmark.parallelStreamSum        avgt   40  118.228 ± 2.560  ms/op
-//        ParallelStreamBenchmark.sequentialLongStreamSum  avgt   40    8.626 ± 0.537  ms/op
-//        ParallelStreamBenchmark.sequentialStreamSum      avgt   40   95.371 ± 2.182  ms/op
+// New M1 Max results (Jan 13, 2020):
+// Benchmark                                        Mode  Cnt   Score   Error  Units
+// ParallelStreamBenchmark.iterativeSum             avgt   10   3.244 ± 0.013  ms/op
+// ParallelStreamBenchmark.sequentialStreamSum      avgt   10  58.416 ± 0.139  ms/op
+// ParallelStreamBenchmark.parallelStreamSum        avgt   10  45.632 ± 0.690  ms/op
+// ParallelStreamBenchmark.sequentialLongStreamSum  avgt   10   6.350 ± 0.028  ms/op
+// ParallelStreamBenchmark.parallelLongStreamSum    avgt   10   0.484 ± 0.016  ms/op
 
 @SuppressWarnings("ALL")
 @BenchmarkMode(Mode.AverageTime)
@@ -57,8 +50,7 @@ public class ParallelStreamBenchmark {
 
     @Benchmark // Fastest possible stream
     public long sequentialLongStreamSum() {
-        return LongStream.rangeClosed(1, N)
-                .sum();
+        return LongStream.rangeClosed(1, N).sum();
     }
 
     @Benchmark

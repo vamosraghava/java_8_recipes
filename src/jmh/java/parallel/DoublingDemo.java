@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 // latest results:
-// Benchmark                            Mode  Cnt    Score   Error  Units
+// Benchmark                            Mode  Cnt    Scor e   Error  Units
 // DoublingDemo.doubleAndSumParallel    avgt   10  104.450 ± 0.118  ms/op
 // DoublingDemo.doubleAndSumSequential  avgt   10  625.347 ± 0.800  ms/op
 

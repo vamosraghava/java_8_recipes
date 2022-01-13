@@ -12,8 +12,7 @@ repositories {
 
 jmh {
     duplicateClassesStrategy = DuplicatesStrategy.WARN
-    includes = ['parallel.DoublingDemo.*']
-    // include = ['parallel.CustomPoolBenchmark.*']
+    includes = ['parallel.DoublingDemo.*', 'parallel.CustomPoolBenchmark.*']
 }
 
 test {
