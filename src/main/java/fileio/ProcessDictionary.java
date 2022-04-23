@@ -13,13 +13,13 @@ import java.util.stream.Stream;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
-@SuppressWarnings("GrazieInspection")
 public class ProcessDictionary {
     private final Path dictionary = Paths.get("src/main/resources/dict/words");
 
     public int maxLength() {
         try (Stream<String> words = Files.lines(dictionary)) {
-            return words.max(Comparator.comparing(String::length)).orElse("").length();
+            return words.max(Comparator.comparing(String::length))  // Optional<String>
+                    .orElse("").length();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -79,7 +79,8 @@ public class ProcessDictionary {
     public void printSortedMapOfWordsUsingBufferedReader() {
         System.out.println("\nNumber of words of each length (desc order):");
         try (Stream<String> words =
-                     new BufferedReader(new FileReader("/usr/share/dict/words")).lines()) {
+                     new BufferedReader(
+                             new FileReader("src/main/resources/dict/words")).lines()) {
             Map<Integer, Long> map = words.filter(s -> s.length() > 20)
                     .collect(groupingBy(String::length, counting()));
 

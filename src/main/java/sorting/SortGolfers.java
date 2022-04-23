@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class SortGolfers {
-    private List<Golfer> golfers = Arrays.asList(
+    private final List<Golfer> golfers = Arrays.asList(
             new Golfer("Jack", "Nicklaus", 68),
             new Golfer("Tiger", "Woods", 70),
             new Golfer("Tom", "Watson", 70),
