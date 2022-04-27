@@ -5,10 +5,10 @@ import org.openjdk.jmh.annotations.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
-// latest results:
-// Benchmark                            Mode  Cnt    Scor e   Error  Units
-// DoublingDemo.doubleAndSumParallel    avgt   10  104.450 ± 0.118  ms/op
-// DoublingDemo.doubleAndSumSequential  avgt   10  625.347 ± 0.800  ms/op
+// latest results (Apr 27, 2022):
+// Benchmark                            Mode  Cnt    Score   Error  Units
+// DoublingDemo.doubleAndSumParallel    avgt   10  105.047 ± 0.390  ms/op
+// DoublingDemo.doubleAndSumSequential  avgt   10  623.405 ± 1.097  ms/op
 
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)

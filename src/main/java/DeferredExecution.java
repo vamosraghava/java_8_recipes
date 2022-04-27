@@ -2,7 +2,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DeferredExecution {
-    private Logger logger = Logger.getLogger(this.getClass().getName());
+    private final Logger logger = Logger.getLogger(this.getClass().getName());
 
     private String createExpensiveMessage(String msg) {
         System.out.println("Creating expensive message at "

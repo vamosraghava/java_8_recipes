@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 // From Java 8 and 9 in Action (now called Modern Java in Action)
 
-// New M1 Max results (Jan 13, 2020):
+// New M1 Max results (Jan 13, 2022):
 // Benchmark                                        Mode  Cnt   Score   Error  Units
 // ParallelStreamBenchmark.iterativeSum             avgt   10   3.244 ± 0.013  ms/op
 // ParallelStreamBenchmark.sequentialStreamSum      avgt   10  58.416 ± 0.139  ms/op
