@@ -53,7 +53,7 @@ public class UsePersonTest {
                 .collect(Collectors.toList());
         Person after = people.get(0);
 
-        assertTrue(before == after);  // same object
+        assertSame(before, after);  // same object
 
         before.setName("Grace Murray Hopper");
         assertEquals("Grace Murray Hopper", after.getName());
@@ -62,11 +62,11 @@ public class UsePersonTest {
                 .map(Person::new)
                 .collect(Collectors.toList());
         after = people.get(0);
-        assertFalse(before == after);  // different objects
+        assertNotSame(before, after);  // different objects
         assertEquals(before, after);   // but equivalent
 
         before.setName("Rear Admiral Dr. Grace Murray Hopper");
-        assertFalse(before.equals(after));
+        assertNotEquals(before, after);
     }
 
     @Test
@@ -94,9 +94,8 @@ public class UsePersonTest {
         assertThat(up.createPersonListUsingNew(), containsInAnyOrder(people));
     }
 
-    @Test @Disabled("Only use if wrap the connection in unmodifiable collection")
+    @Test
     public void createPersonListUsingNewWithLambdas() {
-        assertThrows(UnsupportedOperationException.class,
-                up::createPersonListUsingNewWithLambdas);
+        assertThat(up.createPersonListUsingNewWithLambdas(), containsInAnyOrder(people));
     }
 }

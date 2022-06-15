@@ -21,10 +21,6 @@ public class UsePerson {
         return people;
     }
 
-    private Person createPerson(String name) {
-        return new Person(name);
-    }
-
     public List<Person> createPersonList() {
         return names.stream()                         // Stream<String>
                     .map(name -> new Person(name))    // Stream<Person>
@@ -38,7 +34,7 @@ public class UsePerson {
     }
 
     public List<Person> createPersonList_2ArgCtrRef() {
-        return names.stream()                         // Stream<String>
+        return names.stream()                               // Stream<String>
                     .map(name -> name.split("\\s+"))  // Stream<String[]>
                     .map(Person::new)                 // Stream<Person> using String... ctor
                     .map(Person::new)                 // Stream<Person> copies using the copy ctor
@@ -48,8 +44,8 @@ public class UsePerson {
     public List<Person> createPersonLinkedList() {
         return names.stream()
                     .map(Person::new)
+                    //.collect(Collectors.toCollection(() -> new ArrayList<>(names.size())));
                     //.collect(Collectors.toCollection(() -> new LinkedList<>()));
-                    //.collect(Collectors.toCollection(() -> new ArrayList<>(10)));
                     .collect(Collectors.toCollection(LinkedList::new));
     }
 
