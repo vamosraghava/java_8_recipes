@@ -9,14 +9,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Jumble {
     private final Map<String, List<String>> wordMap;
 
     public Jumble() {
-        try {
-            wordMap = Files.lines(Paths.get("src/main/resources/dict/words"))
-                    .filter(word -> word.length() == 5 || word.length() == 6)
+        try (Stream<String> words = Files.lines(Paths.get("src/main/resources/dict/words"))) {
+            wordMap = words.filter(word -> word.length() == 5 || word.length() == 6)
                     .collect(Collectors.groupingBy(this::word2key));
         } catch (IOException e) {
             throw new UncheckedIOException(e);
