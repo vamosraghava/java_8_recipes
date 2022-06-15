@@ -4,13 +4,12 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
 
 public class StreamsDemo {
-    private List<String> strings = Arrays.asList("this", "is", "a",
+    private final List<String> strings = Arrays.asList("this", "is", "a",
                                                  "list", "of", "strings");
 
     public String joinStream() {

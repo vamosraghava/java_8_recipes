@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import static org.junit.Assert.assertTrue;
 
 public class SortingDemoTest {
-    private SortingDemo demo = new SortingDemo();
+    private final SortingDemo demo = new SortingDemo();
 
     private void checkAlphabetical(List<String> strings) {
         strings.stream()

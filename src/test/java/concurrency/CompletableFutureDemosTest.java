@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 public class CompletableFutureDemosTest {
-    private CompletableFutureDemos demo = new CompletableFutureDemos();
+    private final CompletableFutureDemos demo = new CompletableFutureDemos();
 
     @Test
     public void testRemote() throws Exception {

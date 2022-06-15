@@ -8,7 +8,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class PalindromeEvaluatorTest {
-    private PalindromeEvaluator demo = new PalindromeEvaluator();
+    private final PalindromeEvaluator demo = new PalindromeEvaluator();
 
     @Test
     public void isPalindrome() {

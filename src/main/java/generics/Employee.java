@@ -3,8 +3,8 @@ package generics;
 public class Employee {
     public static final Employee DEFAULT_EMPLOYEE = new Employee(0, "No Name");
 
-    private int id;
-    private String name;
+    private final int id;
+    private final String name;
 
     public Employee(int id, String name) {
         this.id = id;

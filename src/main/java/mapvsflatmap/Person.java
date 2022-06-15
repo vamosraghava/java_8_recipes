@@ -1,7 +1,7 @@
 package mapvsflatmap;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
+import java.util.Objects;
 
 @SuppressWarnings("unused")
 public class Person {
@@ -42,7 +42,7 @@ public class Person {
 
         Person person = (Person) o;
 
-        return name != null ? name.equals(person.name) : person.name == null;
+        return Objects.equals(name, person.name);
     }
 
     @Override

@@ -8,8 +8,8 @@ import java.awt.*;
 import static org.junit.Assert.assertEquals;
 
 public class ProcessColorsTest {
-    private ProcessColors processColors = new ProcessColors();
-    private Color color = new Color(100, 50, 0);
+    private final ProcessColors processColors = new ProcessColors();
+    private final Color color = new Color(100, 50, 0);
 
     @Before
     public void setUp() {

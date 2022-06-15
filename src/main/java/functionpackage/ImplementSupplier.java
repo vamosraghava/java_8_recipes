@@ -39,11 +39,11 @@ public class ImplementSupplier {
         System.out.println(first.orElse("None")); // prints None
 
         System.out.println(first.orElse(String.format("No result found in %s",
-                names.stream().collect(Collectors.joining(", ")))));
+                String.join(", ", names))));
 
         System.out.println(first.orElseGet(() ->
                 String.format("No result found in %s",
-                names.stream().collect(Collectors.joining(", ")))));
+                        String.join(", ", names))));
 
 
     }

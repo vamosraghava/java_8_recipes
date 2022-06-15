@@ -7,7 +7,7 @@ import static java.util.stream.Collectors.toList;
 
 @SuppressWarnings({"Convert2Lambda", "ComparatorCombinators", "unused", "Java8ListSort"})
 public class SortingDemo {
-    private List<String> sampleStrings =
+    private final List<String> sampleStrings =
             Arrays.asList("this", "is", "a", "list", "of", "strings");
 
     // Default sort from Java 7-

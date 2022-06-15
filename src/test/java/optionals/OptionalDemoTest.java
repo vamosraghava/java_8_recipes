@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 import static org.junit.Assert.*;
 
 public class OptionalDemoTest {
-    private Logger logger = Logger.getLogger(OptionalDemoTest.class.getName());
-    private OptionalDemo demo = new OptionalDemo();
+    private final Logger logger = Logger.getLogger(OptionalDemoTest.class.getName());
+    private final OptionalDemo demo = new OptionalDemo();
 
     @Before
     public void setUp() {

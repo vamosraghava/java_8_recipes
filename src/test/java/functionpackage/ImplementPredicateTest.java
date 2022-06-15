@@ -10,7 +10,7 @@ import static functionpackage.ImplementPredicate.STARTS_WITH_S;
 import static org.junit.Assert.assertEquals;
 
 public class ImplementPredicateTest {
-    private ImplementPredicate demo = new ImplementPredicate();
+    private final ImplementPredicate demo = new ImplementPredicate();
     private String[] names;
 
     @Before

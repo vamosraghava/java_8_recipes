@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 import static org.junit.Assert.*;
 
 public class HRTest {
-    private HR hr = HR.getInstance();
-    private List<Employee> sampleEmployees = Arrays.asList(
+    private final HR hr = HR.getInstance();
+    private final List<Employee> sampleEmployees = Arrays.asList(
             new Employee("Malcolm Reynolds"),
             new Employee("Zoe Washburne"),
             new Employee("Hoban Washburne"),

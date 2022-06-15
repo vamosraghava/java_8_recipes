@@ -8,7 +8,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-@SuppressWarnings("Duplicates")
 public class RegionIdsByOffsetTest {
     @Test
     public void getRegionNamesForGMT() {

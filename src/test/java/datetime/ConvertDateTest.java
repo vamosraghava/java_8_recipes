@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class ConvertDateTest {
-    private ConvertDate cd = new ConvertDate();
+    private final ConvertDate cd = new ConvertDate();
 
     @Test
     public void convertFromDateToLD() {

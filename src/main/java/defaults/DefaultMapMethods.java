@@ -8,8 +8,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.LongStream;
 
 public class DefaultMapMethods {
-    private Map<Long, BigInteger> cache = new ConcurrentHashMap<>();
-    private Map<Long, Long> longCache = new HashMap<>();
+    private final Map<Long, BigInteger> cache = new ConcurrentHashMap<>();
+    private final Map<Long, Long> longCache = new HashMap<>();
 
     public BigInteger fib(long i) {
         if (i == 0) return BigInteger.ZERO;

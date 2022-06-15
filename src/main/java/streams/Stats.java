@@ -13,7 +13,7 @@ import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
 
 public class Stats {
-    private NumberFormat nf = NumberFormat.getCurrencyInstance();
+    private final NumberFormat nf = NumberFormat.getCurrencyInstance();
 
     public Team line2team(String line) {
         String[] vals = line.split("\\t+");

@@ -58,16 +58,14 @@ public class FindFirstAny {
 
         System.out.println("Parallel Any: " + any);
 
-        Set<String> words = new HashSet<>();
-        words.addAll(Arrays.asList("this", "is", "a", "stream", "of", "strings"));
+        Set<String> words = new HashSet<>(Arrays.asList("this", "is", "a", "stream", "of", "strings"));
         Optional<String> firstString = words.stream()
                 .parallel() // doesn't change anything in Java 8
                 .findFirst();
         System.out.println("Set parallel: " + firstString);
 
         List<String> wordList = Arrays.asList("this", "is", "a", "stream", "of", "strings");
-        words = new HashSet<>();
-        words.addAll(wordList);
+        words = new HashSet<>(wordList);
         firstString = words.stream()
                 .findFirst();
         System.out.println(firstString);

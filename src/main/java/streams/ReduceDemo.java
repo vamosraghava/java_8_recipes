@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -98,7 +97,7 @@ public class ReduceDemo {
 
         // Note: this is the HARD way; see AddCollectionToMap for easier ways
         SortedMap<Integer, Book> bookMap = books.stream()
-                .reduce(new TreeMap<Integer, Book>(),  // identity for putAll
+                .reduce(new TreeMap<>(),  // identity for putAll
                         (map, book) -> {               // add a single book to map
                             map.put(book.getId(), book);
                             return map;

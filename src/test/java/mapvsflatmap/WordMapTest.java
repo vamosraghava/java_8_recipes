@@ -10,8 +10,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class WordMapTest {
-    private WordMap wordMap = new WordMap();
-    private Map<String, Long> sample = new HashMap<>();
+    private final WordMap wordMap = new WordMap();
+    private final Map<String, Long> sample = new HashMap<>();
 
     @Before
     public void setUp() {

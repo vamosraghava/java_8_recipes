@@ -5,7 +5,7 @@ import java.util.*;
 import static java.util.stream.Collectors.*;
 
 public class ImmutableCollections {
-    public Map<String, Integer> map = Collections.unmodifiableMap(
+    public final Map<String, Integer> map = Collections.unmodifiableMap(
             new HashMap<String, Integer>() {{
                 put("have", 1);
                 put("the", 2);

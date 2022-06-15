@@ -62,7 +62,7 @@ public class CompletableFutureTests {
 
     @Test
     public void completeLong() throws Exception {
-        assertTrue(parseNumber("42").get() == 42);
+        assertEquals(42, (long) parseNumber("42").get());
     }
 
     private CompletableFuture<Long> parseNumber(String arg) {
@@ -119,7 +119,7 @@ public class CompletableFutureTests {
                 CompletableFuture.supplyAsync(() -> x)
                         .thenCompose(n -> CompletableFuture.supplyAsync(() -> n + y));
 
-        assertTrue(5 == completableFuture.get());
+        assertEquals(5, (int) completableFuture.get());
     }
 
     @Test
@@ -131,7 +131,7 @@ public class CompletableFutureTests {
                         .thenCombine(CompletableFuture.supplyAsync(() -> y),
                                 (n1, n2) -> n1 + n2);
 
-        assertTrue(5 == completableFuture.get());
+        assertEquals(5, (int) completableFuture.get());
     }
 
     private CompletableFuture<Integer> getIntegerCompletableFuture(String num) {
@@ -143,14 +143,14 @@ public class CompletableFutureTests {
     public void handleWithException() throws Exception {
         String num = "abc";
         CompletableFuture<Integer> value = getIntegerCompletableFuture(num);
-        assertTrue(value.get() == 0);
+        assertEquals(0, (int) value.get());
     }
 
     @Test
     public void handleWithoutException() throws Exception {
         String num = "42";
         CompletableFuture<Integer> value = getIntegerCompletableFuture(num);
-        assertTrue(value.get() == 42);
+        assertEquals(42, (int) value.get());
     }
 
 }

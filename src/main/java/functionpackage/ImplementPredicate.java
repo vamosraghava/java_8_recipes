@@ -9,8 +9,7 @@ public class ImplementPredicate {
     public static final Predicate<String> STARTS_WITH_S = s -> s.startsWith("S");
 
     public String getNames(String... names) {
-        return Arrays.stream(names)
-                .collect(Collectors.joining(", "));
+        return String.join(", ", names);
     }
 
     public String getNamesOfLength(int length, String... names) {

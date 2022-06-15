@@ -11,8 +11,8 @@ import java.util.stream.IntStream;
 
 @SuppressWarnings("unused")
 public class ExceptionHandling {
-    private Random random = new Random();
-    private Supplier<Integer> supplier = () -> random.nextInt(10);
+    private final Random random = new Random();
+    private final Supplier<Integer> supplier = () -> random.nextInt(10);
 
     private Integer divide(Integer value, Integer factor) {
         try {

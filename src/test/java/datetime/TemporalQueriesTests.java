@@ -14,7 +14,6 @@ import static java.time.temporal.TemporalQueries.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-@SuppressWarnings("Duplicates")
 public class TemporalQueriesTests {
     @Test
     public void queries() {

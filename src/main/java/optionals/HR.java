@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 public class HR {
     private static final HR INSTANCE = new HR();
 
-    private Map<Integer, Employee> employeeMap = new ConcurrentHashMap<>();
+    private final Map<Integer, Employee> employeeMap = new ConcurrentHashMap<>();
 
     private HR() {}
 

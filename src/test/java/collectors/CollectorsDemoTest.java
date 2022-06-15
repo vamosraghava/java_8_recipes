@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CollectorsDemoTest {
-    private CollectorsDemo demo = new CollectorsDemo();
+    private final CollectorsDemo demo = new CollectorsDemo();
 
     @Test
     public void createList() {
@@ -42,7 +42,7 @@ public class CollectorsDemoTest {
         List<String> evenLengthStrings =
                 demo.evenLengthStrings("here", "are", "a", "few", "strings");
         evenLengthStrings.forEach(s -> {
-            assertTrue(s.length() % 2 == 0);
+            assertEquals(0, s.length() % 2);
         });
     }
 

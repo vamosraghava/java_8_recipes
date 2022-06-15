@@ -10,13 +10,11 @@ import java.util.stream.*;
 
 public class CreatingStreams {
     public static void main(String[] args) {
-        String names = Stream.of("Gomez", "Morticia", "Wednesday", "Pugsley")
-                .collect(Collectors.joining(","));
+        String names = String.join(",", "Gomez", "Morticia", "Wednesday", "Pugsley");
         System.out.println(names);
 
         String[] munsters = {"Herman", "Lily", "Eddie", "Marilyn", "Grandpa"};
-        names = Arrays.stream(munsters)
-                .collect(Collectors.joining(","));
+        names = String.join(",", munsters);
         System.out.println(names);
 
         List<BigDecimal> nums = Stream.iterate(BigDecimal.ONE, n -> n.add(BigDecimal.ONE))
@@ -34,8 +32,7 @@ public class CreatingStreams {
         System.out.println(stats);
 
         List<String> bradyBunch = Arrays.asList("Greg", "Marcia", "Peter", "Jan", "Bobby", "Cindy");
-        names = bradyBunch.stream()
-                .collect(Collectors.joining(","));
+        names = String.join(",", bradyBunch);
         System.out.println(names);
 
         List<Integer> ints = IntStream.range(10, 15)

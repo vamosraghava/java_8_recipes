@@ -1,9 +1,6 @@
 package tasks;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparing;
@@ -74,8 +71,7 @@ public class UseTasks {
 
 
         // Collect the tasks into a set
-        Set<Task> taskSet = tasks.stream()
-                .collect(Collectors.toSet());
+        Set<Task> taskSet = new HashSet<>(tasks);
         System.out.println(taskList);
 
 

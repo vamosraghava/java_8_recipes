@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.*;
 
 public class AwaitQuiesenceTest {
-    private AwaitQuiesence aq = new AwaitQuiesence();
+    private final AwaitQuiesence aq = new AwaitQuiesence();
 
     @Test
     public void get() {

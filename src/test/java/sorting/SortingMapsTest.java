@@ -9,8 +9,8 @@ import java.util.Map;
 import static org.junit.Assert.assertTrue;
 
 public class SortingMapsTest {
-    private SortingMaps<String, Integer> sm = new SortingMaps<>();
-    private Map<String, Integer> map = new HashMap<>();
+    private final SortingMaps<String, Integer> sm = new SortingMaps<>();
+    private final Map<String, Integer> map = new HashMap<>();
 
     @Before
     public void setUp() {

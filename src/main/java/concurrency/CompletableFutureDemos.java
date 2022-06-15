@@ -6,9 +6,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 public class CompletableFutureDemos {
-    private Logger logger = Logger.getLogger(this.getClass().getName());
+    private final Logger logger = Logger.getLogger(this.getClass().getName());
 
-    private Map<Integer, Product> cache = new ConcurrentHashMap<>();
+    private final Map<Integer, Product> cache = new ConcurrentHashMap<>();
 
     private Product getLocal(int id) {
         return cache.get(id);

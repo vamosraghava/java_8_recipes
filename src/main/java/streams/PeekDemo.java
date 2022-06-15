@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 import java.util.stream.IntStream;
 
 public class PeekDemo {
-    private Logger logger = Logger.getLogger(PeekDemo.class.getName());
+    private final Logger logger = Logger.getLogger(PeekDemo.class.getName());
 
     public int sumUpTo(int num) {
         return IntStream.rangeClosed(1, num)

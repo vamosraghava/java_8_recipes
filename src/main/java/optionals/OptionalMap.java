@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class OptionalMap<K,V> {
-    private Map<K,V> map = new HashMap<>();
+    private final Map<K,V> map = new HashMap<>();
 
     public Map<K,V> getMap() {
         return map;

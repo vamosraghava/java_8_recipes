@@ -12,6 +12,4 @@ public class SafeVarargsDemo {
     }
 
 
-    public static void main(String[] args) {
-    }
 }

@@ -7,12 +7,11 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PalindromeCheckerTest {
-    private List<String> palindromes = Arrays.asList(
+    private final List<String> palindromes = Arrays.asList(
             "Madam, in Eden, I'm Adam",
             "Flee to me, remote elf!",
             "Go hang a salami; I'm a lasagna hog"
@@ -29,7 +28,7 @@ public class PalindromeCheckerTest {
                     }
                     String forward = sb.toString().toLowerCase();
                     String backward = sb.reverse().toString().toLowerCase();
-                    assertTrue(forward.equals(backward));
+            assertEquals(forward, backward);
                 }
         );
     }

@@ -1,5 +1,7 @@
 package streams;
 
+import java.util.Objects;
+
 public class Employee {
     private String name;
     private Integer salary;
@@ -44,9 +46,9 @@ public class Employee {
 
         Employee employee = (Employee) o;
 
-        if (salary != employee.salary) return false;
-        if (name != null ? !name.equals(employee.name) : employee.name != null) return false;
-        return department != null ? department.equals(employee.department) : employee.department == null;
+        if (!salary.equals(employee.salary)) return false;
+        if (!Objects.equals(name, employee.name)) return false;
+        return Objects.equals(department, employee.department);
     }
 
     @Override

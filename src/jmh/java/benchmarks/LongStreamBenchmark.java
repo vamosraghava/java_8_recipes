@@ -6,9 +6,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.LongStream;
-import java.util.stream.Stream;
 
 //  Benchmark                      Mode  Cnt  Score   Error  Units
 //  LongStreamBenchmark.longValue  avgt   40  2.055 ± 0.032  ms/op

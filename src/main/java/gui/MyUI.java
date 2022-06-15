@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MyUI extends JPanel {
-    private JTextField source = new JTextField("Type text here");
-    private JTextField destination = new JTextField("Result will be here");
+    private final JTextField source = new JTextField("Type text here");
+    private final JTextField destination = new JTextField("Result will be here");
 
     public MyUI() {
         super(new BorderLayout());

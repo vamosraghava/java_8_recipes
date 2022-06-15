@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class PeekDemoTest {
-    private PeekDemo demo = new PeekDemo();
+    private final PeekDemo demo = new PeekDemo();
 
     @Test
     public void sumUpTo() {

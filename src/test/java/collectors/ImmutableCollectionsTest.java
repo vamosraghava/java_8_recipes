@@ -8,9 +8,8 @@ import java.util.Set;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-@SuppressWarnings("Duplicates")
 public class ImmutableCollectionsTest {
-    private ImmutableCollections demo = new ImmutableCollections();
+    private final ImmutableCollections demo = new ImmutableCollections();
 
     @Test(expected = UnsupportedOperationException.class)
     public void createImmutableList() {

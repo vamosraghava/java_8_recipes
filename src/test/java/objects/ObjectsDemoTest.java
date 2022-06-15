@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import static org.junit.Assert.assertTrue;
 
 public class ObjectsDemoTest {
-    private ObjectsDemo demo = new ObjectsDemo();
+    private final ObjectsDemo demo = new ObjectsDemo();
 
     @Test
     public void getStrings() {

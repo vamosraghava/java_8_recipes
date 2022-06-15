@@ -41,14 +41,14 @@ public class StreamsDemoTest {
     public void testSumRandoms1() {
         int num = 1000;
         double err = num * 0.05;
-        assertThat(demo.sumRandoms1(num), is(closeTo(num / 2, err)));
+        assertThat(demo.sumRandoms1(num), is(closeTo(num / 2.0, err)));
     }
 
     @Test
     public void testSumRandoms2() {
         int num = 1000;
         double err = num * 0.05;
-        assertThat(demo.sumRandoms2(num), is(closeTo(num / 2, err)));
+        assertThat(demo.sumRandoms2(num), is(closeTo(num / 2.0, err)));
     }
 
     @Test
@@ -60,6 +60,6 @@ public class StreamsDemoTest {
     public void testSumRandoms3() {
         int num = 1000;
         double err = num * 0.05;
-        assertThat(demo.sumRandoms3(num), is(closeTo(num / 2, err)));
+        assertThat(demo.sumRandoms3(num), is(closeTo(num / 2.0, err)));
     }
 }
